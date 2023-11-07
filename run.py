@@ -5,6 +5,10 @@ print("You will play 5 rounds. Then you get your score.")
 print("Let's start!\n")
 
 def get_username():
+    """
+    Ask user for their username.
+    Validate the input to not be empty and return the username to the console.
+    """
     username = ""
     username = input("Please enter your name: ").strip()
 
