@@ -7,7 +7,8 @@ print("Let's start!\n")
 def get_username():
     """
     Ask user for their username.
-    Validate the input to not be empty and return the username to the console.
+    Validate the input to not be empty and return a welcome message 
+    with the username to the console.
     """
     username = ""
     username = input("Please enter your name: ").strip()
@@ -18,4 +19,24 @@ def get_username():
     print(f"\nHello {username}!\n")
     return username
 
-get_username()
+def choose_operation():
+    """
+    Ask the user to choose which mathematical equations they want to practice.
+    Validate the user input.
+    """
+    print("Choose the type of mathematical operator you would like to play with.")
+    print("You can choose from: add, subtract, multiply, divide")
+    operators = ['add', 'subtract', 'multiply', 'divide']
+    chosen_operator = ""
+    chosen_operator = input("Please enter your chosen mathematical operation: ")
+    
+    while chosen_operator not in operators:
+        print(f"{chosen_operator} is not a valid input.")
+        chosen_operator = input(f"Please choose one of the operators {operators}: ")
+
+    return chosen_operator
+
+
+if __name__ == "__main__":
+    get_username()
+    choose_operation()
