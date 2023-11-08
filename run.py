@@ -1,3 +1,5 @@
+import random
+
 print("Welcome to the Maths Game!")
 print("Here you can test your knowledge in maths.")
 print("You can choose which mathematical operation you would like to practice.")
@@ -35,8 +37,22 @@ def choose_operation():
         chosen_operator = input(f"Please choose one of the operators {operators}: ").lower()
 
     return chosen_operator
+    
+def display_question():
+    """
+    Generate a mathematical operation to be solved
+    based on the user's selection of the operator.
+    """
+    num1 = random.randint(1,10)
+    num2 = random.randint(1,10)
 
+    print(num1, num2)
+    #input(f"{num1} {symbol} {num2}: ")
 
+"""
 if __name__ == "__main__":
     get_username()
     choose_operation()
+    display_question(choose_operation)
+"""
+display_question()
