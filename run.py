@@ -28,11 +28,11 @@ def choose_operation():
     print("You can choose from: add, subtract, multiply, divide")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
-    chosen_operator = input("Please enter your chosen mathematical operation: ")
+    chosen_operator = input("Please enter your chosen mathematical operation: ").lower()
     
     while chosen_operator not in operators:
-        print(f"{chosen_operator} is not a valid input.")
-        chosen_operator = input(f"Please choose one of the operators {operators}: ")
+        print(f"'{chosen_operator}' is not a valid input.")
+        chosen_operator = input(f"Please choose one of the operators {operators}: ").lower()
 
     return chosen_operator
 
