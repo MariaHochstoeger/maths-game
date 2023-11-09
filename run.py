@@ -82,12 +82,12 @@ def display_question(ops):
             i += 1    
 
         if ops == 'divide':
+            print("\nEnter your answer with one decimal place")
             #Ensure that numerator is larger than denominator
             if num1 < num2:
                 num1 = num2
                 num2 = num1
             calculated_result = round(num1 / num2, 1)
-            print(calculated_result)
             given_result = round(float(input(f"\nQuestion: {num1} / {num2} = ")), 1)
             if calculated_result == given_result:
                 correct_score += 1
