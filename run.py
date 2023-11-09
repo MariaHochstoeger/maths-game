@@ -133,8 +133,23 @@ def display_score(score):
     else:
         print(f"\nWell done. You got {score} correct.")
 
+def end_of_game():
+    print("\nIf you would like to play again, enter y.")
+    print("If you would not like to play again, enter n.")
+    while True:
+        play_again = input("Would you like to play again? ").lower()
+        if play_again == "y":
+            print('yes')
+            break
+        elif play_again == "n":
+            break
+        else:
+            print("Please provide a valid input, y or n.")
+        
+
 if __name__ == "__main__":
     username = get_username()
     chosen_operator = choose_operation()
     correct_score = display_question(chosen_operator)
     display_score(correct_score)
+    end_of_game()
