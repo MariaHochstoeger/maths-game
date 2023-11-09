@@ -70,7 +70,13 @@ def display_question(ops):
             
         if ops == 'subtract':
             calculated_result = num1 - num2
-            given_result = int(input(f"\nQuestion: {num1} - {num2} = "))
+            while True: # repeat question until a valid answer is provided
+                try:
+                    given_result = int(input(f"\nQuestion: {num1} - {num2} = "))
+                    break # exit loop once there is a valid integer provided
+                except ValueError as e:
+                    print(f"Caught an error: {e}")
+                    print("Please provide a number without any decimals, e.g. 3, -2")
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
@@ -80,7 +86,13 @@ def display_question(ops):
 
         if ops == 'multiply':
             calculated_result = num1 * num2
-            given_result = int(input(f"\nQuestion: {num1} * {num2} = "))
+            while True: # repeat question until a valid answer is provided
+                try:
+                    given_result = int(input(f"\nQuestion: {num1} * {num2} = "))
+                    break # exit loop once there is a valid integer provided
+                except ValueError as e:
+                    print(f"Caught an error: {e}")
+                    print("Please provide a number without any decimals, e.g. 3")
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
@@ -89,13 +101,19 @@ def display_question(ops):
             i += 1    
 
         if ops == 'divide':
-            print("\nEnter your answer with one decimal place")
             #Ensure that numerator is larger than denominator
             if num1 < num2:
                 num1 = num2
                 num2 = num1
             calculated_result = round(num1 / num2, 1)
-            given_result = round(float(input(f"\nQuestion: {num1} / {num2} = ")), 1)
+            while True:
+                try:
+                    given_result = round(float(input(f"\nQuestion: {num1} / {num2} = ")), 1)
+                    break
+                except ValueError as e:
+                    print(f"Caught an error: {e}")
+                    print("Please provide a number as an answer.")
+                    print("Your answer will be rounded to 1 decimal place.")
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
