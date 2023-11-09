@@ -38,7 +38,7 @@ def choose_operation():
 
     return chosen_operator
     
-def display_question():
+def display_question(ops):
     """
     Generate a mathematical operation to be solved
     based on the user's selection of the operator.
@@ -46,13 +46,11 @@ def display_question():
     num1 = random.randint(1,10)
     num2 = random.randint(1,10)
 
-    print(num1, num2)
-    #input(f"{num1} {symbol} {num2}: ")
+    if ops == 'add':
+        print(num1 + num2)
 
-"""
+
 if __name__ == "__main__":
-    get_username()
-    choose_operation()
-    display_question(choose_operation)
-"""
-display_question()
+    username = get_username()
+    chosen_operator = choose_operation()
+    display_question(chosen_operator)
