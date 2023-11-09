@@ -50,6 +50,7 @@ def display_question(ops):
     while i < 5:
         num1 = random.randint(1,10)
         num2 = random.randint(1,10)
+
         if ops == 'add':
             calculated_result = num1 + num2
             given_result = int(input(f"\nQuestion: {num1} + {num2} = "))
@@ -59,6 +60,28 @@ def display_question(ops):
             else:
                 print("Oh no, that is incorrect... ")
             i += 1
+
+        if ops == 'subtract':
+            calculated_result = num1 - num2
+            given_result = int(input(f"\nQuestion: {num1} - {num2} = "))
+            if calculated_result == given_result:
+                correct_score += 1
+                print("That is correct!")
+            else:
+                print("Oh no, that is incorrect... ")
+            i += 1
+
+        if ops == 'multiply':
+            calculated_result = num1 * num2
+            given_result = int(input(f"\nQuestion: {num1} * {num2} = "))
+            if calculated_result == given_result:
+                correct_score += 1
+                print("That is correct!")
+            else:
+                print("Oh no, that is incorrect... ")
+            i += 1    
+
+    print(correct_score)       
     return correct_score
 
 
