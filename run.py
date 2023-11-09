@@ -43,18 +43,22 @@ def display_question(ops):
     Generate a mathematical operation to be solved
     based on the user's selection of the operator.
     """
-    num1 = random.randint(1,10)
-    num2 = random.randint(1,10)
     correct_score = 0
-
-    if ops == 'add':
-        calculated_result = num1 + num2
-        given_result = int(input(f"Question: {num1} + {num2} = "))
-        if calculated_result == given_result:
-            correct_score += 1
-            print("Correct!")
-        else:
-            print("Oh no, that was incorrect...")
+    i = 0
+    
+    while i < 5:
+        num1 = random.randint(1,10)
+        num2 = random.randint(1,10)
+        if ops == 'add':
+            calculated_result = num1 + num2
+            given_result = int(input(f"Question: {num1} + {num2} = "))
+            if calculated_result == given_result:
+                correct_score += 1
+                print("That is correct!")
+            else:
+                print("Oh no, that is incorrect...")
+            i += 1
+    return correct_score
 
 
 if __name__ == "__main__":
