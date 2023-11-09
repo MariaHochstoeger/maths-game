@@ -18,7 +18,7 @@ def get_username():
     while username == "":
         username = input("You did not enter anything. Please enter a valid name: ")
 
-    print(f"\nHello {username}!\n")
+    print(f"\nHello {username}!")
     return username
 
 def choose_operation():
@@ -26,9 +26,9 @@ def choose_operation():
     Ask the user to choose which mathematical equations they want to practice.
     Validate the user input.
     """
-    print("Choose the type of mathematical operator you would like to play with.")
+    print("\nChoose the type of mathematical operator you would like to play with.")
     print("You can choose from: add, subtract, multiply, divide")
-    print("If you choose add, subtract or multiply you need to give your answers as integers, e.g. 1 or 5")
+    print("If you choose add, subtract or multiply you need to give your answers as integers, e.g. 1 or -5")
     print("If you choose divide, you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
@@ -139,7 +139,10 @@ def end_of_game():
     while True:
         play_again = input("Would you like to play again? ").lower()
         if play_again == "y":
-            print('yes')
+            chosen_operator = choose_operation()
+            correct_score = display_question(chosen_operator)
+            display_score(correct_score)
+            end_of_game()
             break
         elif play_again == "n":
             break
