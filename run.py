@@ -30,7 +30,7 @@ def choose_operation():
     print("You can choose from: add, subtract, multiply, divide")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
-    chosen_operator = input("Please enter your chosen mathematical operation: ").lower()
+    chosen_operator = input("\nPlease enter your chosen mathematical operation: ").lower()
     
     while chosen_operator not in operators:
         print(f"'{chosen_operator}' is not a valid input.")
@@ -42,6 +42,7 @@ def display_question(ops):
     """
     Generate a mathematical operation to be solved
     based on the user's selection of the operator.
+    Repeat 5 times and return the score of correct answers.
     """
     correct_score = 0
     i = 0
@@ -51,12 +52,12 @@ def display_question(ops):
         num2 = random.randint(1,10)
         if ops == 'add':
             calculated_result = num1 + num2
-            given_result = int(input(f"Question: {num1} + {num2} = "))
+            given_result = int(input(f"\nQuestion: {num1} + {num2} = "))
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
             else:
-                print("Oh no, that is incorrect...")
+                print("Oh no, that is incorrect... ")
             i += 1
     return correct_score
 
@@ -64,4 +65,4 @@ def display_question(ops):
 if __name__ == "__main__":
     username = get_username()
     chosen_operator = choose_operation()
-    display_question(chosen_operator)
+    correct_score = display_question(chosen_operator)
