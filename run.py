@@ -28,9 +28,11 @@ def choose_operation():
     """
     print("Choose the type of mathematical operator you would like to play with.")
     print("You can choose from: add, subtract, multiply, divide")
+    print("If you choose add, subtract or multiply you need to give your answers as integers, e.g. 1 or 5")
+    print("If you choose divide, you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
-    chosen_operator = input("\nPlease enter your chosen mathematical operation: ").lower()
+    chosen_operator = input("\nPlease enter your chosen mathematical operator: ").lower()
     
     while chosen_operator not in operators:
         print(f"'{chosen_operator}' is not a valid input.")
@@ -103,13 +105,12 @@ def display_question(ops):
         if ops == 'divide':
             #Ensure that numerator is larger than denominator
             if num1 < num2:
-                num1 = num2
-                num2 = num1
+                num1, num2 = num2, num1
             calculated_result = round(num1 / num2, 1)
-            while True:
+            while True: # repeat question until a valid answer is provided
                 try:
                     given_result = round(float(input(f"\nQuestion: {num1} / {num2} = ")), 1)
-                    break
+                    break # exit loop once there is a valid float is provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
                     print("Please provide a number as an answer.")
