@@ -45,9 +45,16 @@ def display_question(ops):
     """
     num1 = random.randint(1,10)
     num2 = random.randint(1,10)
+    correct_score = 0
 
     if ops == 'add':
-        print(num1 + num2)
+        calculated_result = num1 + num2
+        given_result = int(input(f"Question: {num1} + {num2} = "))
+        if calculated_result == given_result:
+            correct_score += 1
+            print("Correct!")
+        else:
+            print("Oh no, that was incorrect...")
 
 
 if __name__ == "__main__":
