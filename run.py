@@ -81,6 +81,17 @@ def display_question(ops):
                 print("Oh no, that is incorrect... ")
             i += 1    
 
+        if ops == 'divide':
+            calculated_result = round(num1 / num2, 1)
+            print(calculated_result)
+            given_result = round(float(input(f"\nQuestion: {num1} / {num2} = ")), 1)
+            if calculated_result == given_result:
+                correct_score += 1
+                print("That is correct!")
+            else:
+                print("Oh no, that is incorrect... ")
+            i += 1    
+
     print(correct_score)       
     return correct_score
 
