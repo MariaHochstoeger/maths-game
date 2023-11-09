@@ -44,7 +44,8 @@ def display_question(ops):
     """
     Generate a mathematical operation to be solved
     based on the user's selection of the operator.
-    Repeat 5 times and return the score of correct answers.
+    Validate user input and generate appropriate feedback.
+    Ask 5 questions in a row and keep score of correct answers.
     """
     correct_score = 0
     i = 0
@@ -121,12 +122,19 @@ def display_question(ops):
             else:
                 print("Oh no, that is incorrect... ")
             i += 1    
-
-    print(correct_score)       
+     
     return correct_score
 
+def display_score(score):
+    if score == 0:
+        print(f"\nOH NO! You got {score} correct.")
+    elif score == 5:
+        print(f"\nCONGRATULATIONS! You aced it and you got {score} correct.")
+    else:
+        print(f"\nWell done. You got {score} correct.")
 
 if __name__ == "__main__":
     username = get_username()
     chosen_operator = choose_operation()
     correct_score = display_question(chosen_operator)
+    display_score(correct_score)
