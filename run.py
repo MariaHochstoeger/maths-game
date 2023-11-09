@@ -53,14 +53,21 @@ def display_question(ops):
 
         if ops == 'add':
             calculated_result = num1 + num2
-            given_result = int(input(f"\nQuestion: {num1} + {num2} = "))
+            while True: # repeat question until a valid answer is provided
+                try:
+                    given_result = int(input(f"\nQuestion: {num1} + {num2} = "))
+                    break # exit loop once there is a valid integer provided
+                except ValueError as e:
+                    print(f"Caught an error: {e}")
+                    print("Please provide a number without any decimals, e.g. 3")
+
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
             else:
                 print("Oh no, that is incorrect... ")
             i += 1
-
+            
         if ops == 'subtract':
             calculated_result = num1 - num2
             given_result = int(input(f"\nQuestion: {num1} - {num2} = "))
