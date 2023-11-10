@@ -5,7 +5,7 @@ TOTAL_QUESTIONS = 5
 print("Welcome to the Maths Game!")
 print("Here you can test your knowledge in maths.")
 print("You can choose which mathematical operation you would like to practice.")
-print("You will play 5 rounds. Then you get your score.")
+print(f"You will play {TOTAL_QUESTIONS} rounds. Then you get your score.")
 print("Let's start!\n")
 
 
@@ -31,8 +31,10 @@ def choose_operation():
     """
     print("\nChoose the type of mathematical operator you would like to play with.")
     print("You can choose from: add, subtract, multiply, divide")
-    print("If you choose add, subtract or multiply you need to give your answers as integers, e.g. 1 or -5")
-    print("If you choose divide, you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
+    print("If you choose add, subtract or multiply,")
+    print("you need to give your answers as integers, e.g. 1 or -5")
+    print("If you choose divide,")
+    print("you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
     chosen_operator = input("\nPlease enter your chosen mathematical operator: \n").lower().strip()
@@ -129,12 +131,16 @@ def display_question(ops):
     return correct_score
 
 def display_score(score):
+    score_percentage = int(score / TOTAL_QUESTIONS * 100)
     if score == 0:
-        print(f"\nOH NO! You got {score} correct.")
-    elif score == 5:
-        print(f"\nCONGRATULATIONS! You aced it and you got {score} correct.")
+        print(f"\nOH NO! You got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"That is {score_percentage} % correct answers.")
+    elif score == TOTAL_QUESTIONS:
+        print(f"\nCONGRATULATIONS! You aced it and you got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"That is {score_percentage} % correct answers.")
     else:
-        print(f"\nWell done. You got {score} correct.")
+        print(f"\nWell done. You got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"That is {score_percentage} % correct answers.")
 
 def end_of_game(username):
     print("\nIf you would like to play again, enter y.")
