@@ -4,7 +4,7 @@ TOTAL_QUESTIONS = 5
 
 print("Welcome to the Maths Game!")
 print("Here you can test your knowledge in maths.")
-print("You can choose which mathematical operation you would like to practice.")
+print("You can choose the mathematical operation you would like to practice.")
 print(f"You will play {TOTAL_QUESTIONS} rounds. Then you get your score.")
 print("Let's start!\n")
 
@@ -12,7 +12,7 @@ print("Let's start!\n")
 def get_username():
     """
     Ask user for their username.
-    Validate the input to not be empty and return a welcome message 
+    Validate the input to not be empty and return a welcome message
     with the username to the console.
     """
     username = ""
@@ -23,6 +23,7 @@ def get_username():
 
     print(f"\nHello {username}!")
     return username
+
 
 def choose_operation():
     """
@@ -38,13 +39,14 @@ def choose_operation():
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
     chosen_operator = input("\nPlease enter your chosen mathematical operator: \n").lower().strip()
-    
+
     while chosen_operator not in operators:
         print(f"'{chosen_operator}' is not a valid input.")
         chosen_operator = input(f"Please choose one of the operators {operators}: \n").lower().strip()
 
     return chosen_operator
-    
+
+
 def display_question(ops):
     """
     Generate a mathematical operation to be solved
@@ -54,17 +56,17 @@ def display_question(ops):
     """
     correct_score = 0
     i = 0
-    
+
     while i < TOTAL_QUESTIONS:
-        num1 = random.randint(1,10)
-        num2 = random.randint(1,10)
+        num1 = random.randint(1, 10)
+        num2 = random.randint(1, 10)
 
         if ops == 'add':
             calculated_result = num1 + num2
-            while True: # repeat question until a valid answer is provided
+            while True:  # repeat question until a valid answer is provided
                 try:
                     given_result = int(input(f"\nQuestion: {num1} + {num2} = \n"))
-                    break # exit loop once there is a valid integer provided
+                    break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
                     print("Please provide a number without any decimals, e.g. 3")
@@ -75,13 +77,13 @@ def display_question(ops):
             else:
                 print("Oh no, that is incorrect... ")
             i += 1
-            
+
         if ops == 'subtract':
             calculated_result = num1 - num2
-            while True: # repeat question until a valid answer is provided
+            while True:  # repeat question until a valid answer is provided
                 try:
                     given_result = int(input(f"\nQuestion: {num1} - {num2} = \n"))
-                    break # exit loop once there is a valid integer provided
+                    break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
                     print("Please provide a number without any decimals, e.g. 3, -2")
@@ -94,10 +96,10 @@ def display_question(ops):
 
         if ops == 'multiply':
             calculated_result = num1 * num2
-            while True: # repeat question until a valid answer is provided
+            while True:  # repeat question until a valid answer is provided
                 try:
                     given_result = int(input(f"\nQuestion: {num1} * {num2} = \n"))
-                    break # exit loop once there is a valid integer provided
+                    break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
                     print("Please provide a number without any decimals, e.g. 3")
@@ -106,17 +108,17 @@ def display_question(ops):
                 print("That is correct!")
             else:
                 print("Oh no, that is incorrect... ")
-            i += 1    
+            i += 1
 
         if ops == 'divide':
-            #Ensure that numerator is larger than denominator
+            # Ensure that numerator is larger than denominator
             if num1 < num2:
                 num1, num2 = num2, num1
             calculated_result = round(num1 / num2, 1)
-            while True: # repeat question until a valid answer is provided
+            while True:  # repeat question until a valid answer is provided
                 try:
                     given_result = round(float(input(f"\nQuestion: {num1} / {num2} = \n")), 1)
-                    break # exit loop once there is a valid float is provided
+                    break  # exit loop once there is a valid float is provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
                     print("Please provide a number as an answer.")
@@ -126,9 +128,10 @@ def display_question(ops):
                 print("That is correct!")
             else:
                 print("Oh no, that is incorrect... ")
-            i += 1    
-     
+            i += 1
+
     return correct_score
+
 
 def display_score(score):
     """
@@ -146,6 +149,7 @@ def display_score(score):
     else:
         print(f"\nWell done. You got {score} out of {TOTAL_QUESTIONS} questions correct.")
         print(f"That is {score_percentage} % correct answers.")
+
 
 def end_of_game(username):
     """
@@ -165,8 +169,9 @@ def end_of_game(username):
             break
         else:
             print("Please provide a valid input, y or n.")
-        
-def game_loop(username = ""):
+
+
+def game_loop(username=""):
     """
     Repeat the game starting at the user's selection of the operator.
     """
