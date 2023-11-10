@@ -38,62 +38,69 @@ The game follows a number of sequential steps.
 
     ![Welcome Message](assets/images/readme-images/welcome-message.png)
 
-- **Hero image**
-    - The hero image was chosen as it depicts the Schönbrunn castle, one of Vienna's most famous sites. 
-    - The relation to Vienna was deemed to be important as this is an English-language website targeted mostly at people located in Vienna. This way, people immediately get an association with Vienna even though the site is not in German language.
-    - Also, for those with some more knowledge about psychoanalytics, Sigmund Freud, the "godfather of psychoanalytics" was from and mostly worked in Vienna. In professional circles, Vienna still has a very good reputation when it comes to producing good psychoanalysts/psychotherapists.
-    - Since the rest of the site is quite calm and quiet, it was decided to keep the image at full opacity to make it pop.
+- **Username validation**
+    - The name provided cannot be empty, or only white spaces
+    - An error message is displayed should the user not provide a username
 
-    ![Hero image](assets/images/readme-images/hero-image.png)
+    ![Error message for username](assets/images/readme-images/no-name-entered.png)
 
-- **Main section**
-    - Subheaders on all pages give cues about the content of the individual parts.
-    - Content varies depending on the page. 
-    - Texts are kept short to help the user find information quickly.
+- **Choose operator**
+    - After the user has provided a valid username, the user is greeted by name.
+    - Next, the mathematical operators which can be chosen from get introduced. 
+    - The user gets information on the format answers need to be provided in, depending on the operator chosen.
 
-- **Home page and call to action**
-    - A picture of Dr. Himanshu Giri greets the user to give them a first impression of him. It is rounded for a softer look.
-    - The welcome text gives the user a first understanding of what Dr. Giri offers.
-    - Layout is vertical for smaller screens and horizontal to make good use of larger screens.
-    - A call to action motivates the user to book a session. The button is a link which directs the user to the contact page.
+    ![Choose the mathematical operator](assets/images/readme-images/choose-operation.png)
 
-    ![Home page including headshot of Dr Giri, welcome text and call to action](assets/images/readme-images/home-page-incl-headshot-text-and-call-to-action.png)
+- **Operator validation**
+    - The user may only select one of the four mathematical operators defined: add, subtract, multiply, divide.
+    - Should the user enter a different input, or no input at all, an error message gets displayed, repeating the choices the user has.
+    - Should the user choose to capitalize their otherwise correct input, such as "Add", the input gets accepted.
 
-- **About page**
-    - Images are related to the content they are associated with. They show pictures of various scenes which one might encounter in a therapy setting.
-    - The information that site visitors will mostly look for is listed in clear list format, using bullet points where too many items make up the list.
-    - Little icons give a playful vibe, giving lightness to heavy issues.
-    - Layout is vertical for smaller screens and horizontal to make good use of larger screens.
+    ![Operator validation](assets/images/readme-images/unsuccessful-successful-operation-selection.png)
 
-    ![About page](assets/images/readme-images/about-page.png)
+- **Displaying questions**
+    - Upon selecting a valid operator input, the first question gets displayed to the user.
+    - The user can input their answer below the question.
+    
+    ![Display of add question](assets/images/readme-images/display-add-question.png)
 
-- **Contact page**
-    - A form encourages visitors to leave their contact details for Dr. Giri to get in touch with them directly.
-    - Should the site visitor choose to contact Dr. Giri themselves, they are provided with the address, email and phone details. The email address is provided as a link.
-    - On larger screens, the contact information is displayed horizontally and separated into two columns for a cleaner look.
+- **Validating answer**
+    - The answer provided by the user gets validated.
+    - Should the user enter no or an invalid input, an error message gets displayed, explaining which kind of input is valid.
+    - The question gets repeated until a valid input is entered.
 
-    ![Contact page](assets/images/readme-images/contact-page.png)
+    ![Question with invalid answers](assets/images/readme-images/answer-validation.png)
 
-- **Footer**
-    - The footer contains three icons which link to external social media sites.
-    - The links open in new tabs, making it easy for users to come back to the site of Dr. Giri.
-    - The footer is consistent throughout the pages.
+- **Feedback to valid answer**
+    - Upon entering a valid answer, the user immediately gets feedback on whether the provided answer was correct or incorrect.
+    - While there are still questions to be answered, the next question gets displayed immediately.
 
-    ![Footer](assets/images/readme-images/footer.png)
+    ![Correctly and incorrectly answered questions](assets/images/readme-images/correct-incorrect-answer.png)
+
+- **Result**
+    - After all questions have been answered, the user gets their score.
+    - Together with the score, a percentage of correct answers is displayed.
+    - The message to the user varies depending on their performance.
+
+    ![Result](assets/images/readme-images/result-display.png)
+
+- **Play again? and validation**
+    - At the end of the game, the user has the option to choose whether to play again.
+    - If the user does not provide an input, or an invalid one, an error message gets displayed.
+    - If the user selects to play again, the game starts again from the point where the user may choose an operator.
+
+    ![Play again and validation](assets/images/readme-images/play-again.png)
+
+- **End of game**
+    - If the user chooses to exit the game, a goodbye message is displayed to the user with their chosen username.
+
+    ![End of game](assets/images/readme-images/not-playing-again.png)
 
 ### Possible Future Features
 
-- Include a video
+- Choose difficulty level
 
-    Dr. Giri has given a Ted Talk. I would like to embed this video directly on the about page.
-
-- Improve the about page
-
-    Make the costs on the about page into a table giving an easier overview to the site visitor.
-
-- Give the user more options with the form
-
-    I would like to give the site visitor the option to choose whether they would like to be contacted via email or via phone, and if phone, at which times.
+    In the future, the game could be made more interesting by the user being able to choose a level of difficulty. Depending on the level of difficulty chosen, the range of the randomly generated numbers could either expand to include more numbers, or work exclusively with bigger numbers.
 
 ## UX
 
