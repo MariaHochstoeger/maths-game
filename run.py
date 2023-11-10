@@ -19,7 +19,8 @@ def get_username():
     username = input("Please enter your name: \n").strip()
 
     while username == "":
-        username = input("You did not enter anything. Please enter a valid name: \n").strip()
+        username = input("You did not enter anything. "
+                         "Please enter a valid name: \n").strip()
 
     print(f"\nHello {username}!")
     return username
@@ -30,19 +31,23 @@ def choose_operation():
     Ask the user to choose which mathematical equations they want to practice.
     Validate the user input.
     """
-    print("\nChoose the type of mathematical operator you would like to play with.")
+    print("\nChoose the type of mathematical operator "
+          "you would like to play with.")
     print("You can choose from: add, subtract, multiply, divide")
     print("If you choose add, subtract or multiply,")
-    print("you need to give your answers as integers, e.g. 1 or -5")
+    print("you need to give your answers as integers, e.g. 1 or -5.")
     print("If you choose divide,")
-    print("you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
+    print("you need to give your answer as a float "
+          "with one decimal place, e.g. 2.3 or 3.1.")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
-    chosen_operator = input("\nPlease enter your chosen mathematical operator: \n").lower().strip()
+    chosen_operator = input("\nPlease enter your chosen "
+                            "mathematical operator: \n").lower().strip()
 
     while chosen_operator not in operators:
         print(f"'{chosen_operator}' is not a valid input.")
-        chosen_operator = input(f"Please choose one of the operators {operators}: \n").lower().strip()
+        chosen_operator = input(f"Please choose one of the "
+                                f"operators {operators}: \n").lower().strip()
 
     return chosen_operator
 
@@ -65,11 +70,13 @@ def display_question(ops):
             calculated_result = num1 + num2
             while True:  # repeat question until a valid answer is provided
                 try:
-                    given_result = int(input(f"\nQuestion: {num1} + {num2} = \n"))
+                    given_result = int(
+                                   input(f"\nQuestion: {num1} + {num2} = \n"))
                     break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
-                    print("Please provide a number without any decimals, e.g. 3")
+                    print("Please provide a number "
+                          "without any decimals, e.g. 3")
 
             if calculated_result == given_result:
                 correct_score += 1
@@ -82,11 +89,13 @@ def display_question(ops):
             calculated_result = num1 - num2
             while True:  # repeat question until a valid answer is provided
                 try:
-                    given_result = int(input(f"\nQuestion: {num1} - {num2} = \n"))
+                    given_result = int(
+                                   input(f"\nQuestion: {num1} - {num2} = \n"))
                     break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
-                    print("Please provide a number without any decimals, e.g. 3, -2")
+                    print("Please provide a number without "
+                          "any decimals, e.g. 3, -2")
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
@@ -98,11 +107,13 @@ def display_question(ops):
             calculated_result = num1 * num2
             while True:  # repeat question until a valid answer is provided
                 try:
-                    given_result = int(input(f"\nQuestion: {num1} * {num2} = \n"))
+                    given_result = int(
+                                   input(f"\nQuestion: {num1} * {num2} = \n"))
                     break  # exit loop once there is a valid integer provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
-                    print("Please provide a number without any decimals, e.g. 3")
+                    print("Please provide a number without "
+                          "any decimals, e.g. 3")
             if calculated_result == given_result:
                 correct_score += 1
                 print("That is correct!")
@@ -117,11 +128,12 @@ def display_question(ops):
             calculated_result = round(num1 / num2, 1)
             while True:  # repeat question until a valid answer is provided
                 try:
-                    given_result = round(float(input(f"\nQuestion: {num1} / {num2} = \n")), 1)
+                    given_result = round(float(input(
+                                   f"\nQuestion: {num1} / {num2} = \n")), 1)
                     break  # exit loop once there is a valid float is provided
                 except ValueError as e:
                     print(f"Caught an error: {e}")
-                    print("Please provide a number as an answer.")
+                    print("Please provide a float as an answer.")
                     print("Your answer will be rounded to 1 decimal place.")
             if calculated_result == given_result:
                 correct_score += 1
@@ -135,19 +147,23 @@ def display_question(ops):
 
 def display_score(score):
     """
-    Calculate the percentage of correctly answered questions out of total questions.
+    Calculate the percentage of correctly answered questions
+    out of total questions.
     Display the final score and percentage to the user.
     Adapt feedback based on number of correct answers.
     """
     score_percentage = int(score / TOTAL_QUESTIONS * 100)
     if score == 0:
-        print(f"\nOH NO! You got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"\nOH NO! You got {score} out of "
+              f"{TOTAL_QUESTIONS} questions correct.")
         print(f"That is {score_percentage} % correct answers.")
     elif score == TOTAL_QUESTIONS:
-        print(f"\nCONGRATULATIONS! You aced it and you got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"\nCONGRATULATIONS! You aced it and you got {score} out of "
+              f"{TOTAL_QUESTIONS} questions correct.")
         print(f"That is {score_percentage} % correct answers.")
     else:
-        print(f"\nWell done. You got {score} out of {TOTAL_QUESTIONS} questions correct.")
+        print(f"\nWell done. You got {score} out of {TOTAL_QUESTIONS} "
+              f"questions correct.")
         print(f"That is {score_percentage} % correct answers.")
 
 
