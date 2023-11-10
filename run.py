@@ -1,10 +1,13 @@
 import random
 
+TOTAL_QUESTIONS = 5
+
 print("Welcome to the Maths Game!")
 print("Here you can test your knowledge in maths.")
 print("You can choose which mathematical operation you would like to practice.")
 print("You will play 5 rounds. Then you get your score.")
 print("Let's start!\n")
+
 
 def get_username():
     """
@@ -16,7 +19,7 @@ def get_username():
     username = input("Please enter your name: \n").strip()
 
     while username == "":
-        username = input("You did not enter anything. Please enter a valid name: \n")
+        username = input("You did not enter anything. Please enter a valid name: \n").strip()
 
     print(f"\nHello {username}!")
     return username
@@ -32,11 +35,11 @@ def choose_operation():
     print("If you choose divide, you need to give your answer as a float with one decimal place, e.g. 2.3 or 3.1")
     operators = ['add', 'subtract', 'multiply', 'divide']
     chosen_operator = ""
-    chosen_operator = input("\nPlease enter your chosen mathematical operator: \n").lower()
+    chosen_operator = input("\nPlease enter your chosen mathematical operator: \n").lower().strip()
     
     while chosen_operator not in operators:
         print(f"'{chosen_operator}' is not a valid input.")
-        chosen_operator = input(f"Please choose one of the operators {operators}: \n").lower()
+        chosen_operator = input(f"Please choose one of the operators {operators}: \n").lower().strip()
 
     return chosen_operator
     
@@ -50,7 +53,7 @@ def display_question(ops):
     correct_score = 0
     i = 0
     
-    while i < 5:
+    while i < TOTAL_QUESTIONS:
         num1 = random.randint(1,10)
         num2 = random.randint(1,10)
 
@@ -133,26 +136,28 @@ def display_score(score):
     else:
         print(f"\nWell done. You got {score} correct.")
 
-def end_of_game():
+def end_of_game(username):
     print("\nIf you would like to play again, enter y.")
     print("If you would not like to play again, enter n.")
     while True:
         play_again = input("Would you like to play again? \n").lower()
         if play_again == "y":
-            chosen_operator = choose_operation()
-            correct_score = display_question(chosen_operator)
-            display_score(correct_score)
-            end_of_game()
+            game_loop(username)
             break
         elif play_again == "n":
+            print(f"Thanks, {username}, great game. See you again soon!")
             break
         else:
             print("Please provide a valid input, y or n.")
         
-
-if __name__ == "__main__":
-    username = get_username()
+def game_loop(username = ""):
+    if username == "":
+        username = get_username()
     chosen_operator = choose_operation()
     correct_score = display_question(chosen_operator)
     display_score(correct_score)
-    end_of_game()
+    end_of_game(username)
+
+
+if __name__ == "__main__":
+    game_loop()
