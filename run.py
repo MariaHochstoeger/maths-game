@@ -131,6 +131,11 @@ def display_question(ops):
     return correct_score
 
 def display_score(score):
+    """
+    Calculate the percentage of correctly answered questions out of total questions.
+    Display the final score and percentage to the user.
+    Adapt feedback based on number of correct answers.
+    """
     score_percentage = int(score / TOTAL_QUESTIONS * 100)
     if score == 0:
         print(f"\nOH NO! You got {score} out of {TOTAL_QUESTIONS} questions correct.")
@@ -143,6 +148,11 @@ def display_score(score):
         print(f"That is {score_percentage} % correct answers.")
 
 def end_of_game(username):
+    """
+    Ask user whether they would like to play again. Validate input.
+    If yes, re-start the game loop.
+    If no, display goodbye message and exit the game.
+    """
     print("\nIf you would like to play again, enter y.")
     print("If you would not like to play again, enter n.")
     while True:
@@ -157,6 +167,9 @@ def end_of_game(username):
             print("Please provide a valid input, y or n.")
         
 def game_loop(username = ""):
+    """
+    Repeat the game starting at the user's selection of the operator.
+    """
     if username == "":
         username = get_username()
     chosen_operator = choose_operation()
