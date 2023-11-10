@@ -1,6 +1,6 @@
 # Maths Game - A Game to Practice Maths Equations
 
-![responsive mock-up]()
+![responsive mock-up](assets/images/readme-images/mockup.png)
 
 This is a game to make practicing math equations easy. The game allows the user to choose the kind of mathematical operation they would like to play with. After a set number of questions, here 5, the user gets feedback and can choose to play again or exit the game.
 
@@ -25,18 +25,18 @@ No background images or colors other than what was provided with the CI template
 
 The flowchart was created using [Lucid](https://lucid.app/users/login#/login). It gives a visual overview of the logical steps followed while playing the game. 
 
-![Flowchart]()
+![Flowchart](assets/images/readme-images/flowchart.png)
 
-## Features
+## Features / Game Steps
 
-The site has the very basic features of a static website.
+The game follows a number of sequential steps.
 
-- **Navigation Bar**
-    - The navigation bar is always visible on all pages. In the top left corner the logo is a link which brings the user back to the home page, as a user would expect it to.
-    - The page which is currently active is underlined in the header.
-    - Depending on the screen format, the navigation bar is split into two lines or spaced onto a single line (tablets and wider).
+- **Welcome Message**
+    - Upon starting the game, a welcome message gets displayed.
+    - It explains the goal of the game and how many rounds will be played.
+    - Finally, it asks the user to enter their chosen name.
 
-    ![Navigation Bar](assets/images/readme-images/navigation-bar.png)
+    ![Welcome Message](assets/images/readme-images/welcome-message.png)
 
 - **Hero image**
     - The hero image was chosen as it depicts the Schönbrunn castle, one of Vienna's most famous sites. 
