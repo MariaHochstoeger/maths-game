@@ -197,12 +197,14 @@ This site was deployed on Heroku:
 - Deployed by choosing "Manual deploy".
 - Later enabled automatic deploys.
 
-## Sources
+## Technologies Used and Sources
 
+- Python as the programming language
 - Love Sandwiches walk-through project for deployment
 - The mock-up image of the site on different devices was generated using [techsini.com](https://techsini.com/multi-mockup/)
 
 ## Credits
+
 - On how to use the round() function: https://www.geeksforgeeks.org/round-function-python/
 - ChatGPT for explaining to me errors in my code and helping me figure out a solution
 - My group facilitator, Kay Welfare, for helping me with shortening my line lengths to < 80 characters
