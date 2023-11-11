@@ -189,7 +189,8 @@ def end_of_game(username):
 
 def game_loop(username=""):
     """
-    Repeat the game starting at the user's selection of the operator.
+    Ask for a username if none has been provided so far.
+    Otherwise, (re-)start the game at the user's selection of the operator.
     """
     if username == "":
         username = get_username()
