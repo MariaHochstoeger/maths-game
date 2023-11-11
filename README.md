@@ -142,7 +142,7 @@ The site wants to make it simple and easy for people to practice maths equations
 ### Validator Testing
 
 - PEP8 Python Linter: removed a number of whitespaces, and shortened line lengths to achieve a no error feedback message.
-    - ![Linter](assets/images/readme-images/python-linter.png)
+![Linter](assets/images/readme-images/python-linter.png)
 
 ### Browser Testing (section adapted from Kay Welfare, results are my own)
 
@@ -177,47 +177,34 @@ Ensuring all validation and logic steps work as expected and meaningful feedback
 
 | Expectation                         | Result                          |
 | :---------------------------------: | :------------------------------:|
-| I want to confirm that Dr. Giri is a qualified psychotherapist | As a visitor, I can see that Dr. Giri is a psychotherapist on the home page, his full title is visible on the contact page |
-| I want to know which languages Dr. Giri speaks | As a visitor, I can find the languages which Dr. Giri offers sessions in on the about page |
-| I want to learn about the types of sessions Dr. Giri offers | As a visitor, I can find the types of sessions which Dr. Giri offers on the about page |
-| I want to know how much a session costs | As a visitor, I can find the costs of the various types of sessions on the about page |
-| I want to find out whether Dr. Giri specializes in the field which I struggle with | As a visitor, I can find the fields Dr. Giri specializes in on the about page |
-| I want to see where Dr. Giri is located | As a visitor, I can find Dr. Giri's practice's address on the contact page |
-| I want to be able to get in contact with Dr. Giri in the manner that I choose to. | As a visitor, I can choose to get in contact with Dr. Giri in the manner I prefer, whether this is to send an email, or call, or have Dr. Giri contact me |
-| I want to see a mobile friendly layout and responsive design | As a visitor, I have a good view of the site on mobile device without overflow or side-scrolling |
+| I want to understand what the site is about when first visiting it | As a user, upon calling up the site, I can see a message welcoming me to a maths game |
+| I want to understand the rules of the game | As a user, I get informed about the number of rounds I play and what type of games I can play. As I progress in the game, I get information on what kind of input is expected from me, based on my choice of mathematical operator. |
+| I want to choose which mathematical operator I play with | As a user, I can find choose the type of mathematical operator I would like to practice |
+| I want to receive meaningful feedback when I enter an invalid input | As a user, I get immediate feedback when I enter invalid input, with a clear instruction, what kind of input is valid |
+| I want to know how I am doing in the game | As a user, I get feedback on my answer immediately |
+| I want to get a final score | As a user, I learn my final score after playing all rounds |
+| I want to be able to choose to play again or exit the game | As a user, I can play again or exit the game by entering the input of my choice |
 
 ## Deployment
 
-This site was deployed on GitHub Pages:
-- From the repository, first navigate to "Settings" (top of the page) and then "Pages" (left of the newly opened page)
-- Under "Source" choose "Deploy from a Branch" in the dropdown menu
-- Choose the "main" Branch, and folder "/(root)"
-- Click "save"
-- The website is subsequently deployed (this may take a few minutes) on GitHub Pages
-- To get there, in the "Code" tab of the repository, on the right-hand side under "Environments" click on "github-pages"
-- On the newly opened page, on the right-hand side, click on "View deployment"
+This site was deployed on Heroku:
+- In my code, I ensured that all input() text fields ended with a "\n"
+- In Heroku, on my dashboard, I clicked "New" and then "Create new app"
+- I named the app and set the region to "Europe", clicked "Create app"
+- In the settings tab, I added a Config Vars with the key "PORT" and the value "8000", clicked "Add"
+- Also in the settings tab, clicked "Add buildpack" and added "Python", then also added "Nodejs"
+- In the deploy tab, selected "GitHub" as deployment method. Searched for my project and connected the app to it.
+- Deployed by choosing "Manual deploy".
+- Later enabled automatic deploys.
 
 ## Sources
 
-- Love Running walk-through project for basic structures of header and footer
-- Favicon was generated using [favicon.cc](https://www.favicon.cc/)
+- Love Sandwiches walk-through project for deployment
 - The mock-up image of the site on different devices was generated using [techsini.com](https://techsini.com/multi-mockup/)
-- All images taken from pexels.com, except the headshot of Dr. Himanshu Giri, which is from author's private photos
-- Images were compressed using [iloveimg.com](https://www.iloveimg.com/)
-- Icons were taken from [fontawesome.com](https://fontawesome.com/)
-
-## Credits
-- Holly from Tutor Support for spotting a space in the import of my Google Fonts which caused problems with my styling
-- https://css-tricks.com/dont-overthink-flexbox-grids/ for helping me figure out how to get the flexbox on my about page to produce same-width children
-- https://www.w3schools.com/cssref/pr_list-style-position.php for helping me get the bullet points of my list inside the flex container
-- Our group facilitator, Kay Welfare, for her patience and genuine efforts to help. And for not getting tired to repeat certain points over and over again
-- Again, Kay Welfare, for sharing her readme with us
-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_two_columns_flex for teaching me how to make two columns for the form
-- https://sentry.io/answers/how-do-i-create-an-html-button-that-acts-like-a-link/ for helping me fix the error which came up in W3C testing that an ```a``` -element may not be the descendant of a ```button``` -element
-- My mentor, Adegbenga Adeye, for his input
-- My partner, Himanshu Giri, for providing me with the text input for this project
-
-
 
 ## Credits
 - On how to use the round() function: https://www.geeksforgeeks.org/round-function-python/
+- ChatGPT for explaining to me errors in my code and helping me figure out a solution
+- My group facilitator, Kay Welfare, for helping me with shortening my line lengths to < 80 characters
+- My mentor, Spencer Barriball, for his quick availability and very good input, and thinking ahead what challenges I could face with this project, and showing me different ways on how to solve certain problems
+- Myself, for investing the time and effort to try to figure things out on my own
