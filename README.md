@@ -41,6 +41,7 @@ The game follows a number of sequential steps.
 - **Username validation**
     - The name provided cannot be empty, or only white spaces
     - An error message is displayed should the user not provide a username
+    - Note, the user is allowed to enter numbers or special characters, as the chosen username can be made up.
 
     ![Error message for username](assets/images/readme-images/no-name-entered.png)
 
@@ -68,6 +69,8 @@ The game follows a number of sequential steps.
     - The answer provided by the user gets validated.
     - Should the user enter no or an invalid input, an error message gets displayed, explaining which kind of input is valid.
     - The question gets repeated until a valid input is entered.
+
+    - Note: Acceptable input for add, subtract and multiply questions is an integer. Acceptable input for divide questions is either a float or an integer, which will be rounded to 1 decimal place. This choice was made since it is more intuitive for a user to answer a question such as "5 / 5 = ?" with "1" rather than "1.0". Should the question be e.g. "10 / 9 = ?", then the answer "1" would be incorrect, since the integer "1" would be rounded to the float "1.0" which is incorrect. The correct answer would be "1.1".
 
     ![Question with invalid answers](assets/images/readme-images/answer-validation.png)
 
@@ -106,36 +109,31 @@ The game follows a number of sequential steps.
 
 ### Site Goals
 
-The site wants to attract people who face mental or psychological challenges in their lives and are looking for professional help from a qualified psychotherapist. Particularly, the site should speak to English- or Hindi-speaking people located in Vienna, or who would like to try psychotherapy online. 
+The site wants to make it simple and easy for people to practice maths equations in a playful way. Instructions should be clear and feedback messages helpful.
 
 ### User Stories
 
-**As a site visitor:**
+**As a visitor:**
 
-- I want to confirm that Dr. Giri is a qualified psychotherapist.
-- I want to know which languages Dr. Giri speaks.
-- I want to learn about the types of sessions he offers.
-- I want to know how much a session costs.
-- I want to find out whether Dr. Giri specializes in the field which I struggle with.
-- I want to see where Dr. Giri is located.
-- I want to be able to get in contact with Dr. Giri in the manner that I choose to.
-- I want to see a mobile-friendly layout and responsive design.
+- I want to understand what the site is about when first visiting it.
+- I want to understand the rules of the game.
+- I want to choose which mathematical operator I play with.
+- I want to receive meaningful feedback when I enter an invalid input.
+- I want to know how I am doing in the game.
+- I want to get a final score.
+- I want to be able to choose to play again or exit the game.
 
 **As the site administrator:**
 
-- I want to be able to easily update information such as pricing or location.
-- I want to be able to add new content such as videos.
+- I want to be able to easily update parameters of the game, such as how many rounds the user has to play.
+- I want to be able to add to or tweak the existing logic, such as implementing various difficulty levels.
 
 ## Testing
 
-- I confirmed that this project is responsive and looks good on various common screen sizes by using the devtools devices toolbar.
-- I have confirmed that the form works and each field is required. There are error messages if a field is not filled out. If it is filled incorrectly, such as an @ missing in an email, or the phone number field containing letters, there are appropriate error messages.
-- I confirmed that header and navbar are easily readable and understandable.
-
 ### Fixed Bugs
 
-- Imported Google Fonts into html via <link>. This caused css-classes and -ids to not be applied. Fixed it by removing Google Fonts link from index.html and instead importing Google Fonts into style.css.
-- Various flexbox styling problems. Fixed flexbox styling by applying differently colored borders to better understand the individual elements' behaviours. Border colors were removed after fixing the styling.
+- When writing the code I was trying to pass a variable into a method unsuccessfully. The problem was that I did not define the relevant variable, which was the outcome of another method, in the global space but only within that previous method. Solved by assigning the outcome of the previous method to a variable in the global space. 
+- When entering an invalid input as a username, ie no input at all or only whitespace, the validation worked the first time the user entered only whitespaces, but not the second time. Solved by adding .strip() to the input field which was displayed after the user had already once entered an invalid input.
 
 ### Unfixed Bugs
 
@@ -143,46 +141,37 @@ The site wants to attract people who face mental or psychological challenges in 
 
 ### Validator Testing
 
-- HTML ([W3C Validator](https://validator.w3.org/))
-    - 3 errors found: two out of three errors were "section lacks heading". The other one was "The element ```a``` must not be a descendent of the `button` element."
-    - Solution: introduced headings to the two relevant sections and set them to non-displayed. Styling the `a` as a button and removing the button element.
-
-- CSS ([Jigsaw](https://jigsaw.w3.org/css-validator/))
-    - 1 error found: "min-width too many values or values are not recognized: `none`".
-    - Solution: removed min-width. It wasn't necessary anyways.
-
-- Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
-    - Accessibility is at 100, which is what the focus was one.
-Performance is mediocre, also after compressing images.
-    - ![Lighthouse rating](assets/images/readme-images/lighthouse-report_project-1.png)
+- PEP8 Python Linter: removed a number of whitespaces, and shortened line lengths to achieve a no error feedback message.
+    - ![Linter](assets/images/readme-images/python-linter.png)
 
 ### Browser Testing (section adapted from Kay Welfare, results are my own)
 
-**Layout:** Testing layout and appearance of site for consistency throughout browsers.
-
-**Functionality:** Ensuring all links, navigation and form submit functions as expected throughout browsers.
+Ensuring all validation and logic steps work as expected and meaningful feedback messages get displayed at every necessary step of the way. Browsers were tested in desktop versions.
 
 | Browser     | Layout      | Functionality |
 | :---------: | :----------:| :-----------: |
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | only available to me on iPhone |
-| IE          |deprecated by Microsoft, not tested|
+| Safari*     | ✔          | ✔             |
 
-*I asked my peers to review the site for me in Safari and one colleague came back with no bugs found (he made suggestions on styling which I did not implement since I considered them personal preference).
+*not available to me. Tested by my mentor, Spencer Barriball.
 
-### Manual Testing (section adapted from Kay Welfare, results are my own)
+### Manual Testing of Logic and Input Validation (section adapted from Kay Welfare, results are my own)
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
-| **Logo Icon**   | When clicked, home page will open   | Clicked Logo Icon  | Home page opened when clicked |
-| **Navbar Buttons**  | When clicked, the respective page will open  | Clicked all individual navbar buttons | All respective pages opened when button was clicked |
-| **Book A Session Now! Button** | When clicked, Contact page will open  | Clicked on the Book A Session Now! Button | Contact page opens |
-| **Email link on contact page** | When clicked, a blank email will open with the email address as the recipient | Click email link | New blank email opens with email address as recipient |
-| **Social link icons** | Social link icons open relevant websites in new tab when clicked | Click all individual icons | All respective sites open in new tab |
-| **Form submit button** | Form submits when submit button is clicked | Fill out form and click submit button | CI form dump page opens and displays form contents |
-| **Required form fields** | Form will not submit if required fields are blank and/or filled incorrectly, and fields will be highlighted and flagged | Fill out form incorrectly | Form does not submit and highlights incorrectly filled-in fields and gives prompts what may be wrong (eg @-sign missing in email address field) |
+| **Invalid Username Input**   | When entering no input or only whitespace, feedback message to be displayed   | Entered no username, then entered only whitespace | Feedback message displayed: "You did not enter anything. Please enter a valid name:" |
+| **Valid Username Input**  | When entering a username, proceed to next step  | Entered a valid username | Next step was displayed, ie choosing a mathematical operator |
+| **Invalid Mathematical Operator Choice** | When entering no or an invalid input, feedback message to be displayed  | Entered invalid input, such as no input, whitespace, numbers, or invalid words | Feedback message displayed: "'[ *Given input* ]' is not a valid input. Please choose one of the operators [ 'add', 'subtract', 'multiply', 'divide' ]:" |
+| **Valid Mathematical Operator Choice** | When entering a valid mathematical operator, proceed to next step | Tried all four possible mathematical operators | Next step was displayed, ie the first question with the chosen mathematical operator |
+| **Invalid Answer to Questions (Add, Subtract, Multiply)** | When entering no or an invalid input, feedback message to be displayed | Entered invalid input, such as no input, whitespace, letters, special characters or floats | Feedback message displayed: "Caught an error: [ *error message* ]. Please provide a number without any decimals, e.g. 3" |
+| **Invalid Answer to Questions (Divide)** | When entering no or an invalid input, feedback message to be displayed | Entered invalid input, such as no input, whitespace, letters or special characters | Feedback message displayed: "Caught an error: [ *error message* ]. Please provide a float as an answer. Your answer will be rounded to 1 decimal place." |
+| **Valid Answer to Questions (all)** | When entering a valid answer, feedback message and next question get displayed | Entered a valid input | Feedback message gets displayed. For correct input, "That is correct!", for incorrect input, "Oh no, that is incorrect...". Next question is displayed. |
+| **All Questions Answered** | After answering all questions, score gets displayed and user gets asked whether they'd like to play again | Answered last question | Feedback message with absolute and relative score gets displayed, with a written statement based on the user's performance. User gets asked whether they would like to play again |
+| **Play Again - Invalid Input** | When entering no or an invalid input, feedback message to be displayed | Entered invalid input, such as no input, whitespace, any letters other than "y" or "n", special characters or numbers | Feedback message gets displayed: "Please provide a valid input, y or n." |
+| **Play Again - Yes** | If I would like to play again, be taken back to the choice of mathematical operator | Entered "y" when asked whether to play again | Game starts again with asking the user to enter a chosen mathematical operation |
+| **Play Again - No** | If I would not like to play again, exit the game | Entered "n" when asked whether to play again | Feedback message displayed: "Thanks, [ username ], great game. See you again soon!" and game ends |
 
 ### Testing User Stories (section adapted from Kay Welfare, results are my own)
 
@@ -228,9 +217,6 @@ This site was deployed on GitHub Pages:
 - My mentor, Adegbenga Adeye, for his input
 - My partner, Himanshu Giri, for providing me with the text input for this project
 
-
-## Fixed bugs
-- When writing the code I was trying to pass a variable into a method unsuccessfully. The problem was that I did not define the relevant variable, which was the outcome of another method, in the global space but only within that previous method. Solved by assigning the outcome of the previous method to a variable in the global space. 
 
 
 ## Credits
