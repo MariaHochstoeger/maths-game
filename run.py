@@ -2,6 +2,7 @@ import random
 
 TOTAL_QUESTIONS = 5
 
+
 def get_username():
     """
     Ask user for their username.
@@ -196,7 +197,8 @@ def game_loop(username=""):
 if __name__ == "__main__":
     print("Welcome to the Maths Game!")
     print("Here you can test your knowledge in maths.")
-    print("You can choose the mathematical operation you would like to practice.")
+    print("You can choose the mathematical operation "
+          "you would like to practice.")
     print(f"You will play {TOTAL_QUESTIONS} rounds. Then you get your score.")
     print("Let's start!\n")
     game_loop()

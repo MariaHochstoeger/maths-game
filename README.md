@@ -153,9 +153,9 @@ Ensuring all validation and logic steps work as expected and meaningful feedback
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | ✔          | X            |
+| Safari*     | ✔          | X             |
 
-*not available to me. Tested by my mentor, Spencer Barriball. The game does not seem to work in Safari, ie the first message displays but the user cannot enter any input. Together with my mentor, we concluded this was not based on a faulty code, though.
+*not available to me. Tested by my mentor, Spencer Barriball. The game does not seem to work in Safari, ie the first message displays but the user cannot enter any input. Together with my mentor, we concluded this was not due to faulty code, though.
 
 ### Manual Testing of Logic and Input Validation (section adapted from Kay Welfare, results are my own)
 
@@ -187,8 +187,12 @@ Ensuring all validation and logic steps work as expected and meaningful feedback
 
 ## Deployment
 
-- The local repository was done 
-This site was deployed on Heroku:
+The repository was created on GitHub.
+
+The code was edited in GitPod.
+- Changes in the course of the coding, as well as the final code and readme, were done in GitPod and then pushed to GitHub using the sequence: "git add ." --> "git commit -m "..."" --> "git push"
+
+This site was then deployed on Heroku:
 - In my code, I ensured that all input() text fields ended with a "\n"
 - In Heroku, on my dashboard, I clicked "New" and then "Create new app"
 - I named the app and set the region to "Europe", clicked "Create app"
