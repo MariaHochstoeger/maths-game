@@ -132,7 +132,7 @@ The site wants to make it simple and easy for people to practice maths equations
 
 ### Fixed Bugs
 
-- When writing the code I was trying to pass a variable into a method unsuccessfully. The problem was that I did not define the relevant variable, which was the outcome of another method, in the global space but only within that previous method. Solved by assigning the outcome of the previous method to a variable in the global space. 
+- When writing the code I was trying to pass a variable into a function unsuccessfully. The problem was that I did not define the relevant variable, which was the outcome of another function, in the global space but only within that previous function. Solved by assigning the outcome of the previous function to a variable in the global space. 
 - When entering an invalid input as a username, ie no input at all or only whitespace, the validation worked the first time the user entered only whitespaces, but not the second time. Solved by adding .strip() to the input field which was displayed after the user had already once entered an invalid input.
 
 ### Unfixed Bugs
