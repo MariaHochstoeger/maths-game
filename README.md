@@ -153,9 +153,9 @@ Ensuring all validation and logic steps work as expected and meaningful feedback
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | ✔          | ✔             |
+| Safari*     | ✔          | X            |
 
-*not available to me. Tested by my mentor, Spencer Barriball.
+*not available to me. Tested by my mentor, Spencer Barriball. The game does not seem to work in Safari, ie the first message displays but the user cannot enter any input. Together with my mentor, we concluded this was not based on a faulty code, though.
 
 ### Manual Testing of Logic and Input Validation (section adapted from Kay Welfare, results are my own)
 
@@ -187,6 +187,7 @@ Ensuring all validation and logic steps work as expected and meaningful feedback
 
 ## Deployment
 
+- The local repository was done 
 This site was deployed on Heroku:
 - In my code, I ensured that all input() text fields ended with a "\n"
 - In Heroku, on my dashboard, I clicked "New" and then "Create new app"
